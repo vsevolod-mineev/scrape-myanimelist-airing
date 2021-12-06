@@ -6,9 +6,6 @@ from requests_html import HTML
 
 BASE_DIR = os.path.dirname(__file__)
 
-
-
-
 def url_to_txt(url, filename="anime", save=False):
     r=requests.get(url)
     if r.status_code == 200:
@@ -19,11 +16,7 @@ def url_to_txt(url, filename="anime", save=False):
         return html_text
     return ""
 
-
-
-
-
-def parse_and_extract(url, name='2021'):
+def parse_and_extract(url, name=str(datetime.datetime.now().strftime("%B"))):
     html_text = url_to_txt(url)
 
     r_html = HTML(html=html_text)
@@ -53,5 +46,7 @@ def parse_and_extract(url, name='2021'):
         df.to_csv(filepath,index=False)
 
 url = "https://myanimelist.net/topanime.php?type=airing"
-parse_and_extract(url)
+
+if __name__ == '__main__':
+    parse_and_extract(url)
  
