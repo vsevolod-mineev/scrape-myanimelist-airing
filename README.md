@@ -13,4 +13,4 @@ Run the script with:
 python3 scrape.py
 ```
 
-# Open the notebook and re-run all the cells to get the current list of top 10 airing anime in a Jupyter Notebook!
+Open the notebook and re-run all the cells to get the current list of top 10 airing anime in a Jupyter Notebook!
